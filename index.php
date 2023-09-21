@@ -22,9 +22,9 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="#planos">menu</a></li>
-                <li><a href="#servico">menu</a></li>
-                <li><a href="#" class="login">menu</a></li>
+                <li><a href="#planos">Contatos</a></li>
+                <li><a href="#servico">Quem Somos</a></li>
+                <li><a href="vagas.php">Vagas</a></li>
             </ul>
         </nav>
     </div>
@@ -35,13 +35,8 @@
         <div class="meio">
 
         </div>
-        <div class="cards">
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
+        <div class="contatos">
+
         </div>
     <footer>
         <p>devs: Antony & Ramon</p>
