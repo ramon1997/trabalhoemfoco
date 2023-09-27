@@ -36,7 +36,14 @@
 
         </div>
         <div class="contatos">
-
+            <h1>Contatos</h1>
+            <h3>email: trabalhoemfoco@gmail.com</h3>
+            <h3>(75)999999999</h3>
+            <h3>@trabalhoemfoco</h3>
+        </div>
+        <div class="quem">
+            <h1>Quem somos</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio neque ullam id iste incidunt praesentium, libero reiciendis maxime amet minima quo corporis vero odio non laudantium labore magnam maiores est?</p>
         </div>
     <footer>
         <p>devs: Antony & Ramon</p>

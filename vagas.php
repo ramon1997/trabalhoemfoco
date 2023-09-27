@@ -37,40 +37,41 @@
             <h1>titulo da vaga</h1>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus eum rerum incidunt voluptatibus labore et nemo dolorem aspernatur ab officiis earum debitis quas quo excepturi, repudiandae, ea porro aliquam esse?</p>
             <p>nome da empresa</p>
-            <button>Veja mais</button>
+            <button>veja mais</button>
         </div>
         <div class="vaga">
             <h1>titulo da vaga</h1>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus eum rerum incidunt voluptatibus labore et nemo dolorem aspernatur ab officiis earum debitis quas quo excepturi, repudiandae, ea porro aliquam esse?</p>
             <p>nome da empresa</p>
-            <button>Veja mais</button>
+            <button>veja mais</button>
         </div>
         <div class="vaga">
             <h1>titulo da vaga</h1>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus eum rerum incidunt voluptatibus labore et nemo dolorem aspernatur ab officiis earum debitis quas quo excepturi, repudiandae, ea porro aliquam esse?</p>
             <p>nome da empresa</p>
-            <button>Veja mais</button>
+            <button>veja mais</button>
         </div>
         <div class="vaga">
             <h1>titulo da vaga</h1>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus eum rerum incidunt voluptatibus labore et nemo dolorem aspernatur ab officiis earum debitis quas quo excepturi, repudiandae, ea porro aliquam esse?</p>
             <p>nome da empresa</p>
-            <button>Veja mais</button>
+            <button>veja mais</button>
         </div>
         <div class="vaga">
             <h1>titulo da vaga</h1>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus eum rerum incidunt voluptatibus labore et nemo dolorem aspernatur ab officiis earum debitis quas quo excepturi, repudiandae, ea porro aliquam esse?</p>
             <p>nome da empresa</p>
-            <button>Veja mais</button>
+            <button>veja mais</button>
         </div>
         <div class="vaga">
             <h1>titulo da vaga</h1>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus eum rerum incidunt voluptatibus labore et nemo dolorem aspernatur ab officiis earum debitis quas quo excepturi, repudiandae, ea porro aliquam esse?</p>
             <p>nome da empresa</p>
-            <button>Veja mais</button>
+            <button>veja mais</button>
         </div>
     </div>
     <footer>devs: Antony & Ramon</footer>
+    <script src="js.js"></script>
 </body>
 
 </html>
