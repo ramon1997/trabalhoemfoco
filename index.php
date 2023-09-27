@@ -33,7 +33,7 @@
         </div>
         <!--nessa div meio a gente coloca uma imagem e um texto promovendo nosso proprio site e no futuro a gente vende esse espaço tambem, com mais espaço e mais destaue-->
         <div class="meio">
-
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quo similique ex dolorem expedita vero veniam, error assumenda, harum recusandae maiores praesentium. Nesciunt cupiditate eaque at ex laudantium explicabo assumenda?</h1>
         </div>
         <div class="contatos">
             <h1>Contatos</h1>
