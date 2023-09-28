@@ -23,9 +23,10 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="#planos">Contatos</a></li>
-                <li><a href="#servico">Quem Somos</a></li>
+            <li><a href="index.php">Inicio</a></li>
                 <li><a href="vagas.php">Vagas</a></li>
+                <li><a href="#anunciar">Anunciar</a></li>
+                <li><a href="#qeumsomos">Quem Somos</a></li>
             </ul>
         </nav>
     </div>
