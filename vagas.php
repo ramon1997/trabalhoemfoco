@@ -7,7 +7,7 @@
     <title>Vagas - Trabalho em Foco</title>
     <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="estilo-vagas.css">
+    <link rel="stylesheet" href="estilovagas.css">
 </head>
 
 <body>
