@@ -7,12 +7,13 @@
     <title>Trabalho em foco</title>
     <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagens/tools.png" type="image/x-icon">
 </head>
 
 <body>
     <div class="barra">
         <div class="logo">
-            <img src="peso.png">
+            <img src="imagens/tools.png">
             <h1>Trabalho em foco</h1>
         </div>
         <nav class="barra">

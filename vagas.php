@@ -7,13 +7,12 @@
     <title>Vagas - Trabalho em Foco</title>
     <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="estilovagas.css">
 </head>
 
 <body>
     <div class="barra">
         <div class="logo">
-            <img src="peso.png">
+            <img src="imagens/tools.png">
             <h1>Trabalho em foco</h1>
         </div>
         <nav class="barra">
