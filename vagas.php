@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vagas - Trabalho em Foco</title>
-    <link rel="stylesheet" href="menu.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/estilo-vagas.css">
+    <link rel="shortcut icon" href="imagens/tools.png" type="image/x-icon">
 </head>
 
 <body>
@@ -37,7 +39,7 @@
             <h1>titulo da vaga</h1>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus eum rerum incidunt voluptatibus labore et nemo dolorem aspernatur ab officiis earum debitis quas quo excepturi, repudiandae, ea porro aliquam esse?</p>
             <p>nome da empresa</p>
-            <button>veja mais</button>
+            <button><a href="vaga.php" target="_blank" rel="noopener noreferrer">Veja mais</a></button>
         </div>
         <div class="vaga">
             <h1>titulo da vaga</h1>

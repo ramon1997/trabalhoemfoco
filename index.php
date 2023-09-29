@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trabalho em foco</title>
-    <link rel="stylesheet" href="menu.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="imagens/tools.png" type="image/x-icon">
 </head>
 
@@ -32,7 +32,7 @@
         </nav>
     </div>
     <div class="banner">
-        <img src="telafundo2.png" alt="">
+        <img src="imagens/telafundo2.png" alt="">
         <center>
             <h1>Sua rotina,<br>
                 do seu jeito.
