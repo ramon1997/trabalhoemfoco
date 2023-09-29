@@ -5,7 +5,7 @@ div.barra {
     height: 75px;
     display: flex;
     justify-content: space-between;
-    background-color: #000;
+    background-color: #141414;
     color: #fff;
 }
 div.barra h1{

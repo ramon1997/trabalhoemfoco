@@ -7,8 +7,6 @@
     <title>Vagas - Trabalho em Foco</title>
     <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="estilo-vagas.css">
-    <link rel="shortcut icon" href="imagens/tools.png" type="image/x-icon">
 </head>
 
 <body>
@@ -24,9 +22,10 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="#planos">Contatos</a></li>
-                <li><a href="#servico">Quem Somos</a></li>
+            <li><a href="index.php">Inicio</a></li>
                 <li><a href="vagas.php">Vagas</a></li>
+                <li><a href="#anunciar">Anunciar</a></li>
+                <li><a href="#qeumsomos">Quem Somos</a></li>
             </ul>
         </nav>
     </div>
