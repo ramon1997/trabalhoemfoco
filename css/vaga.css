@@ -7,3 +7,26 @@
     color: white;
     background-color: #141414;
 }
+.empresa, .descvaga{
+    width: 100%;
+    height: 300px;
+    background-color: #141414;
+    color: #fff;
+}
+
+.relacionados{
+    width: 100%;
+    height: 300px;
+    background-color: #141414;
+    border: #820002 1px solid;
+    display: flex;
+    justify-content: space-around ;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.relacionados .card{
+    width: 200px;
+    height: 250px;
+    border: #820002 1px solid;
+}

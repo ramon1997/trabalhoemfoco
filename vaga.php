@@ -32,7 +32,19 @@
     <div class="titulo">
         <h1>Titulo da vaga</h1>
     </div>
-    
+    <div class="empresa">
+        <h2>nome da empresa</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea incidunt nesciunt sequi nostrum unde, minima eum exercitationem pariatur sunt debitis molestiae recusandae distinctio itaque dolores eius assumenda aut quae placeat. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates exercitationem ipsum ipsa, quibusdam nam, repellendus consectetur iste explicabo fuga enim eos? Debitis ducimus eligendi consequatur esse repudiandae totam, laudantium facilis?</p>
+    </div>
+    <div class="descvaga">
+        <h2>descrição da vaga</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eos, impedit voluptatum a enim voluptate modi doloribus laudantium error obcaecati porro. Molestiae fugit cumque beatae incidunt nemo omnis. Unde, quos. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates rerum deleniti porro suscipit illum quisquam sed, distinctio provident doloremque magnam, accusamus ipsam. Repellat a sint explicabo iste sapiente deleniti tempore?</p>
+    </div>
+    <div class="relacionados">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+    </div>
     <footer>devs: Antony & Ramon</footer>
     <script src="js.js"></script>
 </body>

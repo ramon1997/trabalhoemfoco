@@ -7,6 +7,7 @@ div.barra {
     justify-content: space-between;
     background-color: #141414;
     color: #fff;
+    border-bottom: #820002 solid 1px;
 }
 div.barra h1{
     color: #000027;
