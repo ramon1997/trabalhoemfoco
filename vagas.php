@@ -72,7 +72,7 @@
             <button>veja mais</button>
         </div>
     </div>
-    <footer>devs: Antony & Ramon</footer>
+    <footer>Copyright © 2023 Antony Dias & Ramon Santana. All right reserved</footer>
     <script src="js.js"></script>
 </body>
 

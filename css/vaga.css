@@ -16,9 +16,8 @@
 
 .relacionados{
     width: 100%;
-    height: 300px;
+    height: 400px;
     background-color: #141414;
-    border: #820002 1px solid;
     display: flex;
     justify-content: space-around ;
     align-items: center;
@@ -26,7 +25,36 @@
 }
 
 .relacionados .card{
-    width: 200px;
-    height: 250px;
-    border: #820002 1px solid;
+    width: 300px;
+    height: 350px;
+    background-color: #000;
+    border-radius: 40px;
+    color: #fff;
+    text-align: center;
+    border: 2px solid #820002;
+}
+
+.relacionados .card button{
+    background-color: #000;
+    color: #fff;
+    width: 100px;
+    height: 50px;
+    border: 1px solid #820002;
+    border-radius: 10px 20px 10px 20px;
+    margin-top: 40px;
+}
+
+.relacionados .card button:hover{
+    background-color: #a30002;
+    border: #000 2px solid;
+}
+
+.relacionados .card:hover{
+    background-image: linear-gradient(to top, #cc0002, #a30002, #820002, #820002);
+    border: 2px solid #000;
+}
+
+#deixe{
+    background-color: #141414;
+    color: #fff;
 }

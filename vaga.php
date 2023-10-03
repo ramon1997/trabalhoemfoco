@@ -40,12 +40,17 @@
         <h2>descrição da vaga</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eos, impedit voluptatum a enim voluptate modi doloribus laudantium error obcaecati porro. Molestiae fugit cumque beatae incidunt nemo omnis. Unde, quos. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates rerum deleniti porro suscipit illum quisquam sed, distinctio provident doloremque magnam, accusamus ipsam. Repellat a sint explicabo iste sapiente deleniti tempore?</p>
     </div>
+    <h2 id="deixe">Vagas Parecidas &curvearrowright;</h2>
     <div class="relacionados">
-        <div class="card"></div>
+        <div class="card">
+            <h2>titulo da vaga</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi corrupti fugiat recusandae, earum reiciendis vel corporis quod sequi dicta nostrum ipsum eius nisi atque placeat tempora repellat. Quasi, omnis similique!</p>
+            <button>veja mais</button>
+        </div>
         <div class="card"></div>
         <div class="card"></div>
     </div>
-    <footer>devs: Antony & Ramon</footer>
+    <footer>Copyright © 2023 Antony Dias & Ramon Santana. All right reserved</footer>
     <script src="js.js"></script>
 </body>
 </html>

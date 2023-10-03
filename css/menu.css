@@ -10,8 +10,7 @@ div.barra {
     border-bottom: #820002 solid 1px;
 }
 div.barra h1{
-    color: #000027;
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    color: #fff;
 }
 
 div.barra img{

@@ -75,7 +75,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio neque ullam id iste incidunt praesentium, libero reiciendis maxime amet minima quo corporis vero odio non laudantium labore magnam maiores est?</p>
     </div>
     <footer>
-        <p>devs: Antony & Ramon</p>
+        <p>Copyright © 2023 Antony Dias & Ramon Santana. All right reserved</p>
     </footer>
     <script src="js.js"></script>
 </body>
