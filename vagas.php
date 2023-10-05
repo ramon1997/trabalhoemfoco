@@ -26,8 +26,8 @@
             <ul class="nav-list">
             <li><a href="index.php">Inicio</a></li>
                 <li><a href="vagas.php">Vagas</a></li>
-                <li><a href="#anunciar">Anunciar</a></li>
-                <li><a href="#qeumsomos">Quem Somos</a></li>
+                <li><a href="#contato">Contatos</a></li>
+                <li><a href="#quemsomos">Quem Somos</a></li>
             </ul>
         </nav>
     </div>
@@ -73,7 +73,7 @@
         </div>
     </div>
     <footer>Copyright © 2023 Antony Dias & Ramon Santana. All right reserved</footer>
-    <script src="js.js"></script>
+    <script src="javascript/js.js"></script>
 </body>
 
 </html>

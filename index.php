@@ -8,6 +8,60 @@
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="imagens/tools.png" type="image/x-icon">
+
+    <!--script do carrosel-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script src="javascript/banner_central.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		
+		var firstbgcarousel=new bgCarousel({
+			wrapperid: 'bannercentral',
+			imagearray: [
+				['imagens/1.jpg'],
+				['imagens/2.jpg'],
+				['imagens/3.jpg'],
+				['imagens/4.jpg']
+			],
+			//config slide
+			displaymode: {type:'auto', pause:3000, cycle:32, stoponclick:false, pauseonmouseover:true},
+			navbuttons: ['imagens/seta_esquerda.jpg','imagens/seta_direita.jpg',],
+			activeslideclass: 'selectedslide',
+			orientation: 'h',
+			persist: true, // lembrar do ultimo slide visualizado e recuperar na mesma sesao
+			slideduration: 500,
+		})
+	</script>
+	<script src="Script/swfobject_modified.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		function randomizeContent(classname){
+			var contents=randomizeContent.collectElementbyClass(classname)
+			contents.text.sort(function() {return 0.5 - Math.random();})
+			var tbodyref=contents.ref[0].tagName=="TR"? contents.ref[0].parentNode : new Object()
+			for (var i=0; i<contents.ref.length; i++){
+				if (tbodyref.moveRow) //if IE
+				tbodyref.moveRow(0, Math.round(Math.random()*(tbodyref.rows.length-1)))
+				else 
+				contents.ref[i].innerHTML=contents.text[i]
+				contents.ref[i].style.visibility="visible"
+			}
+		}
+
+		randomizeContent.collectElementbyClass=function(classname){
+			var classnameRE=new RegExp("(^|\\s+)"+classname+"($|\\s+)", "i")
+			var contentobj=new Object()
+			contentobj.ref=new Array()
+			contentobj.text=new Array()
+			var alltags=document.all ? document.all : document.getElementsByTagName("*")
+			for (var i=0; i<alltags.length; i++){
+				if (typeof alltags[i].className=="string" && alltags[i].className.search(classnameRE)!=-1){
+					contentobj.ref[contentobj.ref.length]=alltags[i]
+					contentobj.text[contentobj.text.length]=alltags[i].innerHTML
+				}
+			}
+			return contentobj
+		}
+	</script>
+    <!--fim do script-->
 </head>
 
 <body>
@@ -23,61 +77,52 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="###">Inicio</a></li>
+                <li><a href="index.php">Inicio</a></li>
                 <li><a href="vagas.php">Vagas</a></li>
-                <li><a href="#anunciar">Anunciar</a></li>
-                <li><a href="#qeumsomos">Quem Somos</a></li>
+                <li><a href="#contatos">Contatos</a></li>
+                <li><a href="#quemsomos">Quem Somos</a></li>
 
             </ul>
         </nav>
     </div>
-    <div class="banner">
-        <img src="imagens/telafundo2.png" alt="">
-        <center>
-            <h1>Sua rotina,<br>
-                do seu jeito.
-            </h1>
-
-            <p> Busque Vagas e trabalhos pela região, com a<br> Xgo, o único site de trabalhos pela região que<br> você precisará.</p>
-
-
-
-            <a href="vagas.php"><button>Anunciar VAGAS</button></a> <a href="vagas.php"><button> VAGAS</button></a>
-
-
-
-
-
-        </center>
-        <br><br>
-        <hr>
-        <br><br><br><br><br><br>
-
-
-
-        <CENTER>
-            <h4>SOBRE Anunciar VAGAS É PRA SER AQUI</h4>
-        </CENTER>
-
+    <div id="bannercentral" class="banner">
     </div>
-    <!--nessa div meio a gente coloca uma imagem e um texto promovendo nosso proprio site e no futuro a gente vende esse espaço tambem, com mais espaço e mais destaue-->
     <div class="meio">
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quo similique ex dolorem expedita vero veniam, error assumenda, harum recusandae maiores praesentium. Nesciunt cupiditate eaque at ex laudantium explicabo assumenda?</h1>
+        <h1>"Nunca é tarde demais para ser quem você poderia ter sido." - George Eliot</h1>
     </div>
     <div class="contatos">
-        <h1>Contatos</h1>
-        <h3>email: trabalhoemfoco@gmail.com</h3>
-        <h3>(75)999999999</h3>
-        <h3>@trabalhoemfoco</h3>
+        <div class="card">
+            <img src="imagens/email.png">
+            <h2>trabalhoemfoco@gmail.com</h2>
+        </div>
+        <div class="card">
+            <img src="imagens/insta.png">
+            <h2>@trabalhoemfoco</h2>
+        </div>
+        <div class="card">
+            <img src="imagens/zap.png">
+            <h2>(75)99999999</h2>
+        </div>
     </div>
     <div class="quem">
         <h1>Quem somos</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio neque ullam id iste incidunt praesentium, libero reiciendis maxime amet minima quo corporis vero odio non laudantium labore magnam maiores est?</p>
+        <p>"Trabalho em foco o seu parceiro confiável na busca por oportunidades de carreira e
+            no recrutamento de talentos. Nossa plataforma foi projetada para simplificar o processo de encontrar
+            empregos ou candidatos ideais. Com uma vasta gama de ofertas de emprego e uma base de dados robusta de
+            currículos, conectamos candidatos talentosos a empresas de renome em todo o país.
+
+            Para os candidatos, oferecemos uma experiência fácil de usar, com pesquisa intuitiva, notificações
+            personalizadas e ferramentas para criar perfis atraentes. Para os empregadores, fornecemos um espaço para
+            publicar vagas, analisar currículos e gerenciar o processo de recrutamento de forma eficiente.
+
+            Independentemente de você estar em busca de um novo desafio profissional ou procurando o candidato perfeito
+            para sua empresa, Trabalho em foco é o seu destino de escolha. Junte-se a nós e leve sua carreira
+            ou seu negócio para o próximo nível."</p>
     </div>
     <footer>
         <p>Copyright © 2023 Antony Dias & Ramon Santana. All right reserved</p>
     </footer>
-    <script src="js.js"></script>
+    <script src="javascript/js.js"></script>
 </body>
 
 </html>
