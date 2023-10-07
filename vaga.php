@@ -26,6 +26,7 @@
                 <li><a href="vagas.php">Vagas</a></li>
                 <li><a href="#contato">Contatos</a></li>
                 <li><a href="#quemsomos">Quem Somos</a></li>
+                <li><a href="perfil.php" class="perfil">Seu Perfil</a></li>
             </ul>
         </nav>
     </div>

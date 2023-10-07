@@ -9,59 +9,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="imagens/tools.png" type="image/x-icon">
 
-    <!--script do carrosel-->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-    <script src="javascript/banner_central.js" type="text/javascript"></script>
-    <script type="text/javascript">
-		
-		var firstbgcarousel=new bgCarousel({
-			wrapperid: 'bannercentral',
-			imagearray: [
-				['imagens/1.jpg'],
-				['imagens/2.jpg'],
-				['imagens/3.jpg'],
-				['imagens/4.jpg']
-			],
-			//config slide
-			displaymode: {type:'auto', pause:3000, cycle:32, stoponclick:false, pauseonmouseover:true},
-			navbuttons: ['imagens/seta_esquerda.jpg','imagens/seta_direita.jpg',],
-			activeslideclass: 'selectedslide',
-			orientation: 'h',
-			persist: true, // lembrar do ultimo slide visualizado e recuperar na mesma sesao
-			slideduration: 500,
-		})
-	</script>
-	<script src="Script/swfobject_modified.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		function randomizeContent(classname){
-			var contents=randomizeContent.collectElementbyClass(classname)
-			contents.text.sort(function() {return 0.5 - Math.random();})
-			var tbodyref=contents.ref[0].tagName=="TR"? contents.ref[0].parentNode : new Object()
-			for (var i=0; i<contents.ref.length; i++){
-				if (tbodyref.moveRow) //if IE
-				tbodyref.moveRow(0, Math.round(Math.random()*(tbodyref.rows.length-1)))
-				else 
-				contents.ref[i].innerHTML=contents.text[i]
-				contents.ref[i].style.visibility="visible"
-			}
-		}
-
-		randomizeContent.collectElementbyClass=function(classname){
-			var classnameRE=new RegExp("(^|\\s+)"+classname+"($|\\s+)", "i")
-			var contentobj=new Object()
-			contentobj.ref=new Array()
-			contentobj.text=new Array()
-			var alltags=document.all ? document.all : document.getElementsByTagName("*")
-			for (var i=0; i<alltags.length; i++){
-				if (typeof alltags[i].className=="string" && alltags[i].className.search(classnameRE)!=-1){
-					contentobj.ref[contentobj.ref.length]=alltags[i]
-					contentobj.text[contentobj.text.length]=alltags[i].innerHTML
-				}
-			}
-			return contentobj
-		}
-	</script>
-    <!--fim do script-->
 </head>
 
 <body>
@@ -77,18 +24,21 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="index.php">Inicio</a></li>
                 <li><a href="vagas.php">Vagas</a></li>
                 <li><a href="#contatos">Contatos</a></li>
                 <li><a href="#quemsomos">Quem Somos</a></li>
+                <li><a href="perfil.php" class="perfil">Seu Perfil</a></li>
 
             </ul>
         </nav>
     </div>
-    <div id="bannercentral" class="banner">
+    <div class="banner">
+        <div class="opaca">
+            <h1>"Nenhum de nós é tão inteligente quanto todos nós juntos." - Ken Blanchard</h1>
+        </div>
     </div>
-    <div class="meio">
-        <h1>"Nunca é tarde demais para ser quem você poderia ter sido." - George Eliot</h1>
+    <div class="titulo">
+        <h1>Contatos</h1>
     </div>
     <div class="contatos">
         <div class="card">

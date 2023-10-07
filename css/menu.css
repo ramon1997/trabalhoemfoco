@@ -37,6 +37,14 @@ nav.barra{
     height: 50px;
 }
 
+.perfil{
+    border: 1px solid #cc0002;
+}
+
+.perfil:hover{
+    background-color: #820002;
+}
+
 .nav-list{
     list-style: none;
     display: flex;
