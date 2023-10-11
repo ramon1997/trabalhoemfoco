@@ -1,0 +1,47 @@
+.formulario{
+    width: 100%;
+    height: auto;
+}
+
+.formulario form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.formulario form input{
+    width: 20%;
+    background-color: #141414;
+    border: 2px solid #820002;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.formulario form input::placeholder{
+    color: #fff;
+}
+
+.formulario form label{
+    margin-top: 30px;
+}
+
+.formulario form textarea{
+    width: 50%;
+    background-color: #141414;
+    border: #820002 2px solid;
+    color: #fff;
+    resize: none;
+}
+
+#botao{
+    margin-top: 20px;
+    width: 30%;
+    height: 50px;
+}
+
+#botao:hover{
+    background-image: linear-gradient(to right, #141414, #580202, #cc0002);
+}

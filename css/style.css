@@ -10,6 +10,7 @@ html {
     overflow-x: hidden;
     /* proibir rolagem Horizontal*/
     background-color: #141414;
+    color: #fff;
 }
 
 .banner {
