@@ -15,7 +15,7 @@
     <div class="barra">
         <div class="logo">
             <img src="imagens/tools.png">
-            <h1>Trabalho em foco</h1>
+            <div id="texto"></div>
         </div>
         <nav class="barra">
             <div class="mobile">
@@ -73,6 +73,7 @@
         <p>Copyright © 2023 Antony Dias & Ramon Santana. All right reserved</p>
     </footer>
     <script src="javascript/js.js"></script>
+    <script src="javascript/letrasquesomem.js"></script>
 </body>
 
 </html>
