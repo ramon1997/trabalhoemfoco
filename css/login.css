@@ -24,7 +24,7 @@ hr{
     margin-top: 30px;
 }
 
-a{
+.texto a{
     text-decoration: none;
     color: #fff;
     padding: 10px;
@@ -32,7 +32,7 @@ a{
     border-radius: 20px;
 }
 
-nav{
+.texto nav{
     width: 400px;
     display: flex;
     justify-content: center;
