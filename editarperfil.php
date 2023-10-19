@@ -38,7 +38,7 @@
             <label for="nome">Seu nome completo:</label>
             <input type="text" name="nome" placeholder="Nome completo">
             <label for="telefone">Numero de celular:</label>
-            <input type="number" name="telefone" placeholder="Seu numero com DDD">
+            <input type="tel" name="telefone" maxlength="15" onkeyup="handlePhone(event)" placeholder="Seu numero com DDD">
             <label for="email">Seu e-mail:</label>
             <input type="email" name="email" placeholder="Um e-mail valido">
             <label for="xp">Suas experiencias profissionais:</label>
