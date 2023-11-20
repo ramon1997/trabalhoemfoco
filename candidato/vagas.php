@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vagas - Trabalho em Foco</title>
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/estilo-vagas.css">
-    <link rel="shortcut icon" href="imagens/tools.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/estilo-vagas.css">
+    <link rel="shortcut icon" href="../imagens/tools.png" type="image/x-icon">
 </head>
 
 <body>
     <div class="barra">
         <div class="logo">
-            <img src="imagens/tools.png">
+            <img src="../imagens/tools.png">
             <div id="texto"></div>
         </div>
         <nav class="barra">
@@ -73,8 +73,8 @@
         </div>
     </div>
     <footer>Copyright © 2023 Antony Dias & Ramon Santana. All right reserved</footer>
-    <script src="javascript/js.js"></script>
-    <script src="javascript/letrasquesomem.js"></script>
+    <script src="../javascript/js.js"></script>
+    <script src="../javascript/letrasquesomem.js"></script>
 </body>
 
 </html>

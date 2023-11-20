@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trabalho em foco</title>
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="imagens/tools.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../imagens/tools.png" type="image/x-icon">
 
 </head>
 
 <body>
     <div class="barra">
         <div class="logo">
-            <img src="imagens/tools.png">
+            <img src="../imagens/tools.png">
             <div id="texto"></div>
         </div>
         <nav class="barra">
@@ -42,15 +42,15 @@
     </div>
     <div class="contatos">
         <div class="card">
-            <img src="imagens/email.png">
+            <img src="../imagens/email.png">
             <h2>trabalhoemfoco@gmail.com</h2>
         </div>
         <div class="card">
-            <img src="imagens/insta.png">
+            <img src="../imagens/insta.png">
             <h2>@trabalhoemfoco</h2>
         </div>
         <div class="card">
-            <img src="imagens/zap.png">
+            <img src="../imagens/zap.png">
             <h2>(75)99999999</h2>
         </div>
     </div>
@@ -72,8 +72,8 @@
     <footer>
         <p>Copyright © 2023 Antony Dias & Ramon Santana. All right reserved</p>
     </footer>
-    <script src="javascript/js.js"></script>
-    <script src="javascript/letrasquesomem.js"></script>
+    <script src="../javascript/js.js"></script>
+    <script src="../javascript/letrasquesomem.js"></script>
 </body>
 
 </html>

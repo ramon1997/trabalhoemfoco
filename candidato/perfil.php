@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seu Perfil - Trabalho em Foco</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/perfil.css">
-    <link rel="shortcut icon" href="imagens/tools.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/perfil.css">
+    <link rel="shortcut icon" href="../imagens/tools.png" type="image/x-icon">
 </head>
 <body>
     <div class="barra">
         <div class="logo">
-            <img src="imagens/tools.png">
+            <img src="../imagens/tools.png">
             <div id="texto"></div>
         </div>
         <nav class="barra">
@@ -26,15 +26,15 @@
                 <li><a href="vagas.php">Vagas</a></li>
                 <li><a href="#contatos">Contatos</a></li>
                 <li><a href="#quemsomos">Quem Somos</a></li>
-                <li><a href="perfil.php" class="perfil">Editar seu perfil</a></li>
+                <li><a href="editarperfil.php" class="perfil">Editar seu perfil</a></li>
             </ul>
         </nav>
     </div>
     <div class="banner">
-        <img src="imagens/arvore.jpg">
+        <img src="../imagens/arvore.jpg">
     </div>
     <div class="foto">
-        <img src="imagens/avatar.png">
+        <img src="../imagens/avatar.png">
     </div>
     <div class="informacoes">
         <h2>Nome completo</h2>
@@ -46,7 +46,7 @@
     <footer>
         <p>Copyright © 2023 Antony Dias & Ramon Santana. All right reserved</p>
     </footer>
-    <script src="javascript/js.js"></script>
-    <script src="javascript/letrasquesomem.js"></script>
+    <script src="../javascript/js.js"></script>
+    <script src="../javascript/letrasquesomem.js"></script>
 </body>
 </html>
