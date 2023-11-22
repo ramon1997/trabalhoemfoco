@@ -30,11 +30,12 @@
         </div>
         <div class="entrar">
             <h3>Preencha os campos abaixo</h3>
-            <form action="" method="post">
+            <form action="app/controller/candidatocontroller.php" method="post">
                 <label for="email">E-mail:</label>
                 <input type="email" name="email" placeholder="Seu e-mail">
                 <label for="senha">Senha:</label>
                 <input type="password" name="senha" placeholder="Sua senha">
+                <input type="hidden" name="login">
                 <input type="submit" value="Entrar" id="botao">
             </form>
         </div>
