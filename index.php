@@ -1,3 +1,37 @@
+<?php
+include_once "app/conexao/conexao.php";
+
+$emailcandidato = $_POST['email'];
+$senhacandidato = $_POST['senha'];
+
+$emailempresa = $_POST['email'];
+$senhaempresa = $_POST['senha'];
+
+$sqlcandidato = "SELECT * FROM testecandi WHERE email = :email AND senha = :senha";
+$candidato = conexao::getConexao()->prepare($sqlcandidato);
+$candidato->bindParam(':email', $emailcandidato);
+$candidato->bindParam(':senha', $senhacandidato);
+$candidato->execute();
+
+$sqlempresa = "SELECT * FROM testeempre WHERE email = :email AND senha = :senha";
+$empresa = conexao::getConexao()->prepare($sqlempresa);
+$empresa->bindParam(':email', $emailempresa);
+$empresa->bindParam(':senha', $senhaempresa);
+$empresa->execute();
+
+if ($candidato->rowCount() > 0) {
+    header("Location: candidato");
+    exit();
+}
+
+if($empresa->rowCount() > 0) {
+    header("Location: empresa");
+    exit();
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -30,7 +64,7 @@
         </div>
         <div class="entrar">
             <h3>Preencha os campos abaixo</h3>
-            <form action="app/controller/candidatocontroller.php" method="post">
+            <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
                 <label for="email">E-mail:</label>
                 <input type="email" name="email" placeholder="Seu e-mail">
                 <label for="senha">Senha:</label>

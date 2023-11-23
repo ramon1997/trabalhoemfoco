@@ -8,11 +8,7 @@ include_once "../dao/empresadao.php";
 $candidato = new candidato();
 $candidatodao = new candidatoDAO();
 
+$empresa = new empresa();
+$empresadao = new empresaDAO();
+
 $d = filter_input_array(INPUT_POST);
-
-if(isset($_POST['login'])){
-    $candidato->setEmail($d['email']);
-    $candidato->setSenha($d['senha']);
-
-    $candidatodao->login($candidato);
-}
