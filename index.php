@@ -2,35 +2,32 @@
 include_once "app/conexao/conexao.php";
 
 $emailcandidato = $_POST['email'];
-$senhacandidato = $_POST['senha'];
+$senhaDigitadadocandidato = $_POST['senha'];
 
 $emailempresa = $_POST['email'];
-$senhaempresa = $_POST['senha'];
+$senhaDigitadadaempresa = $_POST['senha'];
 
-$sqlcandidato = "SELECT * FROM testecandi WHERE email = :email AND senha = :senha";
-$candidato = conexao::getConexao()->prepare($sqlcandidato);
+$candidato = conexao::getConexao()->prepare("SELECT senha FROM testecandi WHERE email = :email");
 $candidato->bindParam(':email', $emailcandidato);
-$candidato->bindParam(':senha', $senhacandidato);
 $candidato->execute();
+$resultadocandidato = $candidato->fetch();
 
-$sqlempresa = "SELECT * FROM testeempre WHERE email = :email AND senha = :senha";
-$empresa = conexao::getConexao()->prepare($sqlempresa);
+$empresa = conexao::getConexao()->prepare("SELECT senha FROM testeempre WHERE email = :email");
 $empresa->bindParam(':email', $emailempresa);
-$empresa->bindParam(':senha', $senhaempresa);
 $empresa->execute();
+$resultadoempresa = $empresa->fetch();
 
-if ($candidato->rowCount() > 0) {
+if ($resultadocandidato && password_verify($senhaDigitadadocandidato, $resultadocandidato['senha'])) {
     header("Location: candidato");
     exit();
 }
 
-if($empresa->rowCount() > 0) {
+if ($resultadoempresa && password_verify($senhaDigitadadaempresa, $resultadoempresa['senha'])) {
     header("Location: empresa");
     exit();
 }
-
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">

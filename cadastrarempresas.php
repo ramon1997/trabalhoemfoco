@@ -20,7 +20,7 @@
         <h1>Cadastro de empresas</h1>
     </div>
     <div class="campos">
-        <form action="" method="post">
+        <form action="app/controller/empresacontroller.php" method="post">
             <label for="nome">Nome completo da empresa:</label>
             <input type="text" name="nome" id="nome" placeholder="Nome da empresa">
             <label for="cidade">Cidade:</label>
@@ -29,6 +29,7 @@
             <input type="email" name="email" id="email" placeholder="Seu e-mail">
             <label for="senha">Crie uma senha:</label>
             <input type="password" name="senha" id="senha" placeholder="Senha">
+            <input type="hidden" name="cadastrar">
             <input type="submit" value="Cadastrar" id="botao">
         </form>
     </div>
