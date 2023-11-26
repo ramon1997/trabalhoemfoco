@@ -15,3 +15,51 @@ class empresaDAO{
         }
     }
 }
+
+//dao das vagas, preguiça de criar novos arquivos pra pouca coisa
+
+class VagasDAO {
+    public function listarVagas() {
+        try {
+            $sql = "SELECT * FROM testevaga";
+
+            $stmt = conexao::getConexao()->query($sql);
+
+            $vagas = $stmt->fetchAll(PDO::FETCH_CLASS, 'Vagas');
+
+            return $vagas;
+        } catch (\Throwable $th) {
+            echo "erro";
+            return [];
+        }
+    }
+
+    public function infoVaga($id) {
+        try {
+            $sql = "SELECT * FROM testevaga WHERE id = :id";
+            $stmt = conexao::getConexao()->prepare($sql);
+            $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+            $stmt->execute();
+            
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+            if ($result) {
+                $vaga = new Vagas();
+                $vaga->setId($result['id']);
+                $vaga->setTitulo($result['titulo']);
+                $vaga->setDescricao($result['descricao']);
+    
+                return $vaga;
+            } else {
+                return false;
+            }
+        } catch (\Throwable $th) {
+            echo "erro ".$th;
+            return false;
+        }
+    }
+    
+    
+    
+    
+}

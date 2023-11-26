@@ -40,3 +40,35 @@ class empresa{
         $this->empresasenha = $empresasenha;
     }
 }
+
+//model das vagas, preguiça de criar novos arquivos pra pouca coisa
+
+class vagas{
+    private $id;
+    private $titulo;
+    private $descricao;
+
+    function getId(){
+        return $this->id;
+    }
+
+    function getTitulo(){
+        return $this->titulo;
+    }
+
+    function getDescricao(){
+        return $this->descricao;
+    }
+
+    function setId($id){
+        $this->id = $id;
+    }
+
+    function setTitulo($titulo){
+        $this->titulo = $titulo;
+    }
+
+    function setDescricao($descricao){
+        $this->descricao = $descricao;
+    }
+}

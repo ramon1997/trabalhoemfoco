@@ -1,5 +1,26 @@
+<?php
+include_once "../app/conexao/conexao.php";
+include_once "../app/model/empresa.php";
+include_once "../app/dao/empresadao.php";
+
+$vagas = new vagas;
+$vagasdao = new VagasDAO;
+
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+
+if ($id === false || $id === null) {
+    header("Location: vagas.php");
+    exit();
+}
+
+$dadosDaVaga = $vagasdao->infoVaga($id);
+
+if ($dadosDaVaga !== false) {
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +30,7 @@
     <link rel="stylesheet" href="../css/vaga.css">
     <link rel="shortcut icon" href="../imagens/tools.png" type="image/x-icon">
 </head>
+
 <body>
     <div class="barra">
         <div class="logo">
@@ -22,7 +44,7 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-            <li><a href="index.php">Inicio</a></li>
+                <li><a href="index.php">Inicio</a></li>
                 <li><a href="vagas.php">Vagas</a></li>
                 <li><a href="#contato">Contatos</a></li>
                 <li><a href="#quemsomos">Quem Somos</a></li>
@@ -30,17 +52,17 @@
             </ul>
         </nav>
     </div>
-    <div class="titulo">
-        <h1>Titulo da vaga</h1>
-    </div>
-    <div class="empresa">
-        <h2>nome da empresa</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea incidunt nesciunt sequi nostrum unde, minima eum exercitationem pariatur sunt debitis molestiae recusandae distinctio itaque dolores eius assumenda aut quae placeat. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates exercitationem ipsum ipsa, quibusdam nam, repellendus consectetur iste explicabo fuga enim eos? Debitis ducimus eligendi consequatur esse repudiandae totam, laudantium facilis?</p>
-    </div>
-    <div class="descvaga">
-        <h2>descrição da vaga</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eos, impedit voluptatum a enim voluptate modi doloribus laudantium error obcaecati porro. Molestiae fugit cumque beatae incidunt nemo omnis. Unde, quos. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates rerum deleniti porro suscipit illum quisquam sed, distinctio provident doloremque magnam, accusamus ipsam. Repellat a sint explicabo iste sapiente deleniti tempore?</p>
-    </div>
+        <div class="titulo">
+            <h1><?php echo $dadosDaVaga->getTitulo(); ?></h1>
+        </div>
+        <div class="empresa">
+            <h2>nome da empresa</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea incidunt nesciunt sequi nostrum unde, minima eum exercitationem pariatur sunt debitis molestiae recusandae distinctio itaque dolores eius assumenda aut quae placeat. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates exercitationem ipsum ipsa, quibusdam nam, repellendus consectetur iste explicabo fuga enim eos? Debitis ducimus eligendi consequatur esse repudiandae totam, laudantium facilis?</p>
+        </div>
+        <div class="descvaga">
+            <h2>descrição da vaga</h2>
+            <p><?php echo $dadosDaVaga->getDescricao(); ?></p>
+        </div>
     <h2 id="deixe">Vagas Parecidas &curvearrowright;</h2>
     <div class="relacionados">
         <div class="card">
@@ -55,4 +77,10 @@
     <script src="../javascript/js.js"></script>
     <script src="../javascript/letrasquesomem.js"></script>
 </body>
+
 </html>
+<?php
+} else {
+    echo "Vaga não encontrada ou erro na consulta.";
+}
+?>

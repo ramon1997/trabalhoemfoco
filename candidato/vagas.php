@@ -1,3 +1,13 @@
+<?php
+include_once "../app/conexao/conexao.php";
+include_once "../app/model/empresa.php";
+include_once "../app/dao/empresadao.php";
+
+$vagas = new vagas;
+$vagasdao = new VagasDAO;
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -24,7 +34,7 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-            <li><a href="index.php">Inicio</a></li>
+                <li><a href="index.php">Inicio</a></li>
                 <li><a href="#contato">Contatos</a></li>
                 <li><a href="#quemsomos">Quem Somos</a></li>
                 <li><a href="perfil.php" class="perfil">Seu Perfil</a></li>
@@ -34,43 +44,13 @@
     <div class="titulo">
         <h1>Vagas Disponiveis &curvearrowright;</h1>
     </div>
-    <div class="vagas">
+    <?php foreach ($vagasdao->listarVagas() as $vaga) { ?>
         <div class="vaga">
-            <h1>titulo da vaga</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus eum rerum incidunt voluptatibus labore et nemo dolorem aspernatur ab officiis earum debitis quas quo excepturi, repudiandae, ea porro aliquam esse?</p>
-            <p>nome da empresa</p>
-            <button><a href="vaga.php" target="_blank" rel="noopener noreferrer">Veja mais</a></button>
+            <h1><?php echo $vaga->getTitulo(); ?></h1>
+            <p><?php echo $vaga->getDescricao(); ?></p>
+            <button><a href="vaga.php?id=<?php echo $vaga->getId()?>" target="_blank" rel="noopener noreferrer">Veja mais</a></button>
         </div>
-        <div class="vaga">
-            <h1>titulo da vaga</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus eum rerum incidunt voluptatibus labore et nemo dolorem aspernatur ab officiis earum debitis quas quo excepturi, repudiandae, ea porro aliquam esse?</p>
-            <p>nome da empresa</p>
-            <button>veja mais</button>
-        </div>
-        <div class="vaga">
-            <h1>titulo da vaga</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus eum rerum incidunt voluptatibus labore et nemo dolorem aspernatur ab officiis earum debitis quas quo excepturi, repudiandae, ea porro aliquam esse?</p>
-            <p>nome da empresa</p>
-            <button>veja mais</button>
-        </div>
-        <div class="vaga">
-            <h1>titulo da vaga</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus eum rerum incidunt voluptatibus labore et nemo dolorem aspernatur ab officiis earum debitis quas quo excepturi, repudiandae, ea porro aliquam esse?</p>
-            <p>nome da empresa</p>
-            <button>veja mais</button>
-        </div>
-        <div class="vaga">
-            <h1>titulo da vaga</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus eum rerum incidunt voluptatibus labore et nemo dolorem aspernatur ab officiis earum debitis quas quo excepturi, repudiandae, ea porro aliquam esse?</p>
-            <p>nome da empresa</p>
-            <button>veja mais</button>
-        </div>
-        <div class="vaga">
-            <h1>titulo da vaga</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus eum rerum incidunt voluptatibus labore et nemo dolorem aspernatur ab officiis earum debitis quas quo excepturi, repudiandae, ea porro aliquam esse?</p>
-            <p>nome da empresa</p>
-            <button>veja mais</button>
-        </div>
+    <?php } ?>
     </div>
     <footer>Copyright © 2023 Antony Dias & Ramon Santana. All right reserved</footer>
     <script src="../javascript/js.js"></script>
