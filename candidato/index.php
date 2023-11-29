@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+// Verifica se o usuário está autenticado
+if (!isset($_SESSION['candidato']) || $_SESSION['candidato'] !== true) {
+    // Redireciona para a página de login se não estiver autenticado
+    header("Location: ../index.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

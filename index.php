@@ -18,11 +18,15 @@ $empresa->execute();
 $resultadoempresa = $empresa->fetch();
 
 if ($resultadocandidato && password_verify($senhaDigitadadocandidato, $resultadocandidato['senha'])) {
+    session_start();
+    $_SESSION['candidato'] = true;
     header("Location: candidato");
     exit();
 }
 
 if ($resultadoempresa && password_verify($senhaDigitadadaempresa, $resultadoempresa['senha'])) {
+    session_start();
+    $_SESSION['empresa'] = true;
     header("Location: empresa");
     exit();
 }

@@ -24,5 +24,9 @@ if (isset($_POST['cadastrar'])) {
 
     header("Location: ../../index.php");
     exit();
+} elseif (isset($_GET['sair'])) {
+    session_start();
+    session_destroy();
+    header("Location: ../../index.php");
+    exit();
 }
-?>

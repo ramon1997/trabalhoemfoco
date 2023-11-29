@@ -43,6 +43,7 @@
         <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi vel natus excepturi aliquam maxime! Modi animi totam iste eligendi quaerat labore ea consectetur porro, nihil repudiandae sint ex. Deserunt, quisquam?</h3>
         <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium tempore at, ab sunt rerum illum sapiente esse, enim voluptatibus molestias exercitationem iusto commodi minima impedit, aliquam fuga iure tempora voluptas.</h3>
     </div>
+    <a href="../app/controller/candidatocontroller.php?sair">Sair</a>
     <footer>
         <p>Copyright © 2023 Antony Dias & Ramon Santana. All right reserved</p>
     </footer>

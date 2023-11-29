@@ -24,7 +24,7 @@ if ($dadosDaVaga !== false) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaga - trabalho em foco</title>
+    <title><?php echo $dadosDaVaga->getTitulo(); ?> - trabalho em foco</title>
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/vaga.css">
