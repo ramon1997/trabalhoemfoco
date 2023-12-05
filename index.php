@@ -12,7 +12,7 @@ $candidato->bindParam(':email', $emailcandidato);
 $candidato->execute();
 $resultadocandidato = $candidato->fetch();
 
-$empresa = conexao::getConexao()->prepare("SELECT senha FROM testeempre WHERE email = :email");
+$empresa = conexao::getConexao()->prepare("SELECT id_empresa, senha FROM empresa WHERE email_empresa = :email");
 $empresa->bindParam(':email', $emailempresa);
 $empresa->execute();
 $resultadoempresa = $empresa->fetch();
@@ -27,6 +27,7 @@ if ($resultadocandidato && password_verify($senhaDigitadadocandidato, $resultado
 if ($resultadoempresa && password_verify($senhaDigitadadaempresa, $resultadoempresa['senha'])) {
     session_start();
     $_SESSION['empresa'] = true;
+    $_SESSION['idEmpresa'] = $resultadoempresa['id_empresa'];
     header("Location: empresa");
     exit();
 }

@@ -4,6 +4,9 @@ class empresa{
     private $nome;
     private $empresaemail;
     private $empresasenha;
+    private $area;
+    private $descricao;
+    private $cidade;
 
     function getId(){
         return $this->id;
@@ -19,6 +22,18 @@ class empresa{
 
     function getSenha(){
         return $this->empresasenha;
+    }
+
+    function getArea(){
+        return $this->area;
+    }
+
+    function getDescricao(){
+        return $this->descricao;
+    }
+
+    function getCidade(){
+        return $this->cidade;
     }
 
     function setId($id){
@@ -38,6 +53,18 @@ class empresa{
 
     function setSenha($empresasenha){
         $this->empresasenha = $empresasenha;
+    }
+
+    function setArea($area){
+        $this->area = $area;
+    }
+
+    function setDescricao($descricao){
+        $this->descricao = $descricao;
+    }
+
+    function setCidade($cidade){
+        $this->cidade = $cidade;
     }
 }
 

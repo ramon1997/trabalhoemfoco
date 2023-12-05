@@ -2,7 +2,7 @@
 class empresaDAO{
     public function cadastrar(empresa $empresa){
         try {
-            $sql = "INSERT INTO testeempre (nome, email, senha) VALUES (:nome, :email, :senha)";
+            $sql = "INSERT INTO empresa (nome_empresa, email_empresa, senha) VALUES (:nome, :email, :senha)";
 
             $stmt = conexao::getConexao()->prepare($sql);
             $stmt->bindValue(":nome", $empresa->getNome());
@@ -14,6 +14,51 @@ class empresaDAO{
             echo "erro ao cadastrar".$e;
         }
     }
+
+    public function atualizar(empresa $empresa){
+        try {
+            $sql = "UPDATE empresa set nome_empresa = :nome, email_empresa = :email, area = :area, cidade = :cidade, descricao = :descricao WHERE id = :id";
+
+            $stmt = conexao::getConexao()->prepare($sql);
+            $stmt->bindvalue(":id", $empresa->getId());
+            $stmt->bindValue(":nome", $empresa->getNome());
+            $stmt->bindValue(":email", $empresa->getEmail());
+            $stmt->bindvalue(":area", $empresa->getArea());
+            $stmt->bindValue(":cidade", $empresa->getCidade());
+            $stmt->bindValue(":descricao", $empresa->getDescricao());
+        } catch (\Throwable $th) {
+            echo "erro ao atualizar".$th;
+        }
+    }
+
+    public function infoEmpresa($id){
+        try {
+            $sql = "SELECT * FROM empresa WHERE id_empresa = :id";
+            $stmt = conexao::getConexao()->prepare($sql);
+            $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+            $stmt->execute();
+            
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+            if ($result) {
+                $empresa = new empresa();
+                $empresa->setId($result['id_empresa']);
+                $empresa->setNome($result['nome_empresa']);
+                $empresa->setEmail($result['email_empresa']);
+                $empresa->setArea($result['area']);
+                $empresa->setCidade($result['cidade']);
+                $empresa->setDescricao($result['descricao']);
+    
+                return $empresa;
+            } else {
+                return false;
+            }
+        } catch (\Throwable $th) {
+            echo "erro ".$th;
+            return false;
+        }
+    }
+    
 }
 
 //dao das vagas, preguiça de criar novos arquivos pra pouca coisa
@@ -58,8 +103,18 @@ class VagasDAO {
             return false;
         }
     }
-    
-    
-    
-    
+
+    public function criarVaga(vagas $vagas){
+        try {
+            $sql = "INSERT INTO testevaga (titulo, descricao) VALUES (:titulo, :descricao)";
+
+            $stmt = conexao::getConexao()->prepare($sql);
+            $stmt->bindValue(":titulo", $vagas->getTitulo());
+            $stmt->bindValue(":descricao", $vagas->getDescricao());
+
+            return $stmt->execute();
+        } catch (Exception $e) {
+            echo "erro ao cadastrar".$e;
+        }
+    }
 }

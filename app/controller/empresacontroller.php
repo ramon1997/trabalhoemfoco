@@ -11,11 +11,15 @@ $candidatodao = new candidatoDAO();
 $empresa = new empresa();
 $empresadao = new empresaDAO();
 
+$vagas = new vagas();
+$vagasdao = new VagasDAO();
+
 $d = filter_input_array(INPUT_POST);
 
 if (isset($_POST['cadastrar'])) {
     $empresa->setNome($d['nome']);
     $empresa->setEmail($d['email']);
+    $empresa->setCidade($d['cidade']);
 
     $senhaHash = password_hash($d['senha'], PASSWORD_DEFAULT);
     $empresa->setSenha($senhaHash);
@@ -29,4 +33,22 @@ if (isset($_POST['cadastrar'])) {
     session_destroy();
     header("Location: ../../index.php");
     exit();
+} elseif (isset($_POST['criar'])) {
+    $vagas->setTitulo($d['titulo']);
+    $vagas->setDescricao($d['descricao']);
+
+    $vagasdao->criarVaga($vagas);
+    echo "<script>alert('vaga criada')</script>";
+    header("Location: ../../empresa");
+} elseif (isset($_POST['atualizar'])) {
+    $empresa->setId($d['id']);
+    $empresa->setNome($d['nome']);
+    $empresa->setEmail($d['email']);
+    $empresa->setArea($d['area']);
+    $empresa->setCidade($d['cidade']);
+    $empresa->setDescricao($d['descricao']);
+
+    $empresadao->atualizar($empresa);
+
+    header("Location: ../../empresa/perfilempresa.php");
 }
