@@ -11,6 +11,7 @@ $dadosdaEmpresa = $empresadao->infoEmpresa($id);
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +21,7 @@ $dadosdaEmpresa = $empresadao->infoEmpresa($id);
     <link rel="stylesheet" href="../css/perfil.css">
     <link rel="shortcut icon" href="../imagens/tools.png" type="image/x-icon">
 </head>
+
 <body>
     <div class="barra">
         <div class="logo">
@@ -41,10 +43,10 @@ $dadosdaEmpresa = $empresadao->infoEmpresa($id);
         </nav>
     </div>
     <div class="banner">
-        
+        <img src="../imagens/arvore.jpg">
     </div>
     <div class="foto">
-        
+        <img src="../imagens/avatar.png">
     </div>
     <div class="informacoes">
         <h2><?php echo $dadosdaEmpresa->getNome(); ?></h2>
@@ -59,4 +61,5 @@ $dadosdaEmpresa = $empresadao->infoEmpresa($id);
     <script src="../javascript/js.js"></script>
     <script src="../javascript/letrasquesomem.js"></script>
 </body>
+
 </html>

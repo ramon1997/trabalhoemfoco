@@ -17,7 +17,7 @@ class empresaDAO{
 
     public function atualizar(empresa $empresa){
         try {
-            $sql = "UPDATE empresa set nome_empresa = :nome, email_empresa = :email, area = :area, cidade = :cidade, descricao = :descricao WHERE id = :id";
+            $sql = "UPDATE empresa set nome_empresa = :nome, email_empresa = :email, area = :area, cidade = :cidade, descricao = :descricao WHERE id_empresa = :id";
 
             $stmt = conexao::getConexao()->prepare($sql);
             $stmt->bindvalue(":id", $empresa->getId());
@@ -26,6 +26,8 @@ class empresaDAO{
             $stmt->bindvalue(":area", $empresa->getArea());
             $stmt->bindValue(":cidade", $empresa->getCidade());
             $stmt->bindValue(":descricao", $empresa->getDescricao());
+
+            return $stmt->execute();
         } catch (\Throwable $th) {
             echo "erro ao atualizar".$th;
         }

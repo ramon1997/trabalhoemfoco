@@ -54,9 +54,9 @@ $dadosdaEmpresa = $empresadao->infoEmpresa($id);
             <label for="area">Area de atuação:</label>
             <input type="text" name="area" id="area">
             <label for="cidade">Cidade:</label>
-            <input type="text" name="cidade" placeholder="Cidade onde está sua empresa">
+            <input type="text" name="cidade" value="<?php echo $dadosdaEmpresa->getCidade(); ?>">
             <label for="xp">Descrição da sua empresa:</label>
-            <textarea name="descricao" cols="30" rows="10" desabled></textarea>
+            <textarea name="descricao" cols="30" rows="10" desabled value="<?php echo $dadosdaEmpresa->getDescricao(); ?>"></textarea>
             <input type="hidden" name="atualizar">
             <input type="hidden" name="id" value="<?php echo $dadosdaEmpresa->getId(); ?>">
             <input type="submit" value="Editar" id="botao">
