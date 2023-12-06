@@ -35,6 +35,7 @@ if (!isset($_SESSION['empresa']) || $_SESSION['empresa'] !== true) {
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
+                <li><a href="minhasvagas.php">Minhas vagas</a></li>
                 <li><a href="criarvaga.php">Criar Vagas</a></li>
                 <li><a href="#contatos">Contatos</a></li>
                 <li><a href="#quemsomos">Quem Somos</a></li>

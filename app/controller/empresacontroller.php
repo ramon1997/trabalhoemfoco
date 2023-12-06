@@ -1,4 +1,8 @@
 <?php
+// Obtenha o idEmpresa da sessão
+session_start();
+$idEmpresa = $_SESSION['idEmpresa'];
+
 include_once "../conexao/conexao.php";
 include_once "../model/candidato.php";
 include_once "../model/empresa.php";
@@ -39,7 +43,7 @@ if (isset($_POST['cadastrar'])) {
     $vagas->setNomedaempresa($d['nomedaempresa']);
     $vagas->setDescricaodaempresa($d['descricaodaempresa']);
 
-    $vagasdao->criarVaga($vagas);
+    $vagasdao->criarVaga($vagas, $idEmpresa);
     echo "<script>alert('vaga criada')</script>";
     header("Location: ../../empresa");
 } elseif (isset($_POST['atualizar'])) {
