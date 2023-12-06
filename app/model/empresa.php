@@ -74,6 +74,8 @@ class vagas{
     private $id;
     private $titulo;
     private $descricao;
+    private $nomedaempresa;
+    private $descricaodaempresa;
 
     function getId(){
         return $this->id;
@@ -87,6 +89,14 @@ class vagas{
         return $this->descricao;
     }
 
+    function getNomedaempresa(){
+        return $this->nomedaempresa;
+    }
+
+    function getDescricaodaempresa(){
+        return $this->descricaodaempresa;
+    }
+
     function setId($id){
         $this->id = $id;
     }
@@ -97,5 +107,13 @@ class vagas{
 
     function setDescricao($descricao){
         $this->descricao = $descricao;
+    }
+
+    function setNomedaempresa($nomedaempresa){
+        $this->nomedaempresa = $nomedaempresa;
+    }
+
+    function setDescricaodaempresa($descricaodaempresa){
+        $this->descricaodaempresa = $descricaodaempresa;
     }
 }

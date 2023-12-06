@@ -52,11 +52,11 @@ $dadosdaEmpresa = $empresadao->infoEmpresa($id);
             <label for="email">Seu e-mail:</label>
             <input type="email" name="email" value="<?php echo $dadosdaEmpresa->getEmail(); ?>">
             <label for="area">Area de atuação:</label>
-            <input type="text" name="area" id="area">
+            <input type="text" name="area" id="area" value="<?php echo $dadosdaEmpresa->getArea(); ?>">
             <label for="cidade">Cidade:</label>
             <input type="text" name="cidade" value="<?php echo $dadosdaEmpresa->getCidade(); ?>">
             <label for="xp">Descrição da sua empresa:</label>
-            <textarea name="descricao" cols="30" rows="10" desabled value="<?php echo $dadosdaEmpresa->getDescricao(); ?>"></textarea>
+            <textarea name="descricao" cols="30" rows="10" desabled><?php echo $dadosdaEmpresa->getDescricao(); ?></textarea>
             <input type="hidden" name="atualizar">
             <input type="hidden" name="id" value="<?php echo $dadosdaEmpresa->getId(); ?>">
             <input type="submit" value="Editar" id="botao">

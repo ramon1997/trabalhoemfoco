@@ -36,6 +36,8 @@ if (isset($_POST['cadastrar'])) {
 } elseif (isset($_POST['criar'])) {
     $vagas->setTitulo($d['titulo']);
     $vagas->setDescricao($d['descricao']);
+    $vagas->setNomedaempresa($d['nomedaempresa']);
+    $vagas->setDescricaodaempresa($d['descricaodaempresa']);
 
     $vagasdao->criarVaga($vagas);
     echo "<script>alert('vaga criada')</script>";

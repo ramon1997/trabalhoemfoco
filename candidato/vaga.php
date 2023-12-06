@@ -56,8 +56,8 @@ if ($dadosDaVaga !== false) {
             <h1><?php echo $dadosDaVaga->getTitulo(); ?></h1>
         </div>
         <div class="empresa">
-            <h2>nome da empresa</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea incidunt nesciunt sequi nostrum unde, minima eum exercitationem pariatur sunt debitis molestiae recusandae distinctio itaque dolores eius assumenda aut quae placeat. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates exercitationem ipsum ipsa, quibusdam nam, repellendus consectetur iste explicabo fuga enim eos? Debitis ducimus eligendi consequatur esse repudiandae totam, laudantium facilis?</p>
+            <h2><?php echo $dadosDaVaga->getNomedaempresa();?></h2>
+            <p><?php echo $dadosDaVaga->getDescricaodaempresa();?> </p>
         </div>
         <div class="descvaga">
             <h2>descrição da vaga</h2>

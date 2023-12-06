@@ -68,7 +68,7 @@ class empresaDAO{
 class VagasDAO {
     public function listarVagas() {
         try {
-            $sql = "SELECT * FROM testevaga";
+            $sql = "SELECT * FROM vaga";
 
             $stmt = conexao::getConexao()->query($sql);
 
@@ -83,7 +83,7 @@ class VagasDAO {
 
     public function infoVaga($id) {
         try {
-            $sql = "SELECT * FROM testevaga WHERE id = :id";
+            $sql = "SELECT * FROM vaga WHERE id = :id";
             $stmt = conexao::getConexao()->prepare($sql);
             $stmt->bindParam(":id", $id, PDO::PARAM_INT);
             $stmt->execute();
@@ -95,6 +95,8 @@ class VagasDAO {
                 $vaga->setId($result['id']);
                 $vaga->setTitulo($result['titulo']);
                 $vaga->setDescricao($result['descricao']);
+                $vaga->setNomedaempresa($result['nome_empresa']);
+                $vaga->setDescricaodaempresa($result['descricao_empresa']);
     
                 return $vaga;
             } else {
@@ -108,11 +110,13 @@ class VagasDAO {
 
     public function criarVaga(vagas $vagas){
         try {
-            $sql = "INSERT INTO testevaga (titulo, descricao) VALUES (:titulo, :descricao)";
+            $sql = "INSERT INTO vaga (titulo, descricao, nome_empresa, descricao_empresa) VALUES (:titulo, :descricao, :nomedaempresa, :descricaodaempresa)";
 
             $stmt = conexao::getConexao()->prepare($sql);
             $stmt->bindValue(":titulo", $vagas->getTitulo());
             $stmt->bindValue(":descricao", $vagas->getDescricao());
+            $stmt->bindValue(":nomedaempresa", $vagas->getNomedaempresa());
+            $stmt->bindvalue(":descricaodaempresa", $vagas->getDescricaodaempresa());
 
             return $stmt->execute();
         } catch (Exception $e) {
