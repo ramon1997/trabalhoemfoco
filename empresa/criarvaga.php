@@ -49,10 +49,8 @@ $dadosdaEmpresa = $empresadao->infoEmpresa($id);
             <input type="text" name="titulo" placeholder="Ex:secretaria">
             <label for="xp">Descrição da sua vaga:</label>
             <textarea name="descricao" cols="30" rows="10" desabled></textarea>
-            <label for="nomedaempresa">Nome da empresa:</label>
-            <input type="text" name="nomedaempresa" id="nomedaempresa" value="<?php echo $dadosdaEmpresa->getNome(); ?>">
-            <label for="descricaodaempresa">Descrição da empresa:</label>
-            <textarea name="descricaodaempresa" cols="30" rows="10" desabled><?php echo $dadosdaEmpresa->getDescricao(); ?></textarea>
+            <input type="hidden" name="nomedaempresa" value="<?php echo $dadosdaEmpresa->getNome(); ?>">
+            <input type="hidden" name="descricaodaempresa" value="<?php echo $dadosdaEmpresa->getDescricao(); ?>">
             <input type="hidden" name="criar">
             <input type="submit" value="Criar" id="botao">
         </form>

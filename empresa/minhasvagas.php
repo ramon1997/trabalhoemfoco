@@ -18,7 +18,7 @@ $vagasdao = new VagasDAO;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vagas - Trabalho em Foco</title>
+    <title>Minhas vagas - Trabalho em Foco</title>
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/estilo-vagas.css">
@@ -46,13 +46,13 @@ $vagasdao = new VagasDAO;
         </nav>
     </div>
     <div class="titulo">
-        <h1>Vagas Disponiveis &curvearrowright;</h1>
+        <h1>Minhas vagas &curvearrowright;</h1>
     </div>
     <?php foreach ($vagasdao->minhasVagas($idEmpresa) as $vaga) { ?>
         <div class="vaga">
             <h1><?php echo $vaga->getTitulo(); ?></h1>
             <p><?php echo $vaga->getDescricao(); ?></p>
-            <button><a href="vaga.php?id=<?php echo $vaga->getId()?>" target="_blank" rel="noopener noreferrer">Veja mais</a></button>
+            <button><a href="../app/controller/empresacontroller.php?apagarvaga&id=<?php echo $vaga->getId()?>">Apagar vaga</a></button>
         </div>
     <?php } ?>
     </div>

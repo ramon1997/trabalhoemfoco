@@ -162,4 +162,16 @@ class VagasDAO
             return false;
         }
     }
+
+    public function apagarVaga(vagas $vagas){
+        $sqlAssociacao = "DELETE FROM empresa_vaga WHERE id_vaga = :id";
+        $stmtAssociacao = conexao::getConexao()->prepare($sqlAssociacao);
+        $stmtAssociacao->bindValue(":id", $vagas->getId());
+        $stmtAssociacao->execute();
+
+        $sql = "DELETE FROM vaga WHERE id = :id";
+        $stmt = conexao::getConexao()->prepare($sql);
+        $stmt->bindValue(":id", $vagas->getId());
+        $stmt->execute();
+    }
 }

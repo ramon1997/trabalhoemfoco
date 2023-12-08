@@ -57,4 +57,9 @@ if (isset($_POST['cadastrar'])) {
     $empresadao->atualizar($empresa);
 
     header("Location: ../../empresa/perfilempresa.php");
+} elseif (isset($_GET['apagarvaga'])) {
+    $vagas->setId($_GET['id']);
+    $vagasdao->apagarVaga($vagas);
+
+    header("Location: ../../empresa/minhasvagas.php");
 }
