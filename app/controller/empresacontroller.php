@@ -62,4 +62,12 @@ if (isset($_POST['cadastrar'])) {
     $vagasdao->apagarVaga($vagas);
 
     header("Location: ../../empresa/minhasvagas.php");
+} elseif (isset($_POST['atualizarvaga'])) {
+    $vagas->setId($d['id']);
+    $vagas->setTitulo($d['titulo']);
+    $vagas->setDescricao($d['descricao']);
+
+    $vagasdao->atualizarVaga($vagas);
+
+    header("Location: ../../empresa/minhasvagas.php");
 }

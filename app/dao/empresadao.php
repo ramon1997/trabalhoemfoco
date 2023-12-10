@@ -174,4 +174,14 @@ class VagasDAO
         $stmt->bindValue(":id", $vagas->getId());
         $stmt->execute();
     }
+
+    public function atualizarVaga(vagas $vagas){
+        $sql = "UPDATE vaga set titulo = :titulo, descricao = :descricao WHERE id = :id";
+
+        $stmt = conexao::getConexao()->prepare($sql);
+        $stmt->bindValue(":titulo", $vagas->getTitulo());
+        $stmt->bindValue(":descricao", $vagas->getDescricao());
+        $stmt->bindValue(":id", $vagas->getId());
+        $stmt->execute();
+    }
 }
