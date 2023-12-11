@@ -44,7 +44,6 @@ if (isset($_POST['cadastrar'])) {
     $vagas->setDescricaodaempresa($d['descricaodaempresa']);
 
     $vagasdao->criarVaga($vagas, $idEmpresa);
-    echo "<script>alert('vaga criada')</script>";
     header("Location: ../../empresa");
 } elseif (isset($_POST['atualizar'])) {
     $empresa->setId($d['id']);
@@ -59,7 +58,7 @@ if (isset($_POST['cadastrar'])) {
     header("Location: ../../empresa/perfilempresa.php");
 } elseif (isset($_GET['apagarvaga'])) {
     $vagas->setId($_GET['id']);
-    $vagasdao->apagarVaga($vagas);
+    $vagasdao->apagarVaga($vagas, $idEmpresa);
 
     header("Location: ../../empresa/minhasvagas.php");
 } elseif (isset($_POST['atualizarvaga'])) {
@@ -67,7 +66,7 @@ if (isset($_POST['cadastrar'])) {
     $vagas->setTitulo($d['titulo']);
     $vagas->setDescricao($d['descricao']);
 
-    $vagasdao->atualizarVaga($vagas);
+    $vagasdao->atualizarVaga($vagas, $idEmpresa);
 
     header("Location: ../../empresa/minhasvagas.php");
 }

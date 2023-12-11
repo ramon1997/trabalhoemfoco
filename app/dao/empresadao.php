@@ -163,25 +163,55 @@ class VagasDAO
         }
     }
 
-    public function apagarVaga(vagas $vagas){
-        $sqlAssociacao = "DELETE FROM empresa_vaga WHERE id_vaga = :id";
-        $stmtAssociacao = conexao::getConexao()->prepare($sqlAssociacao);
-        $stmtAssociacao->bindValue(":id", $vagas->getId());
-        $stmtAssociacao->execute();
-
-        $sql = "DELETE FROM vaga WHERE id = :id";
-        $stmt = conexao::getConexao()->prepare($sql);
-        $stmt->bindValue(":id", $vagas->getId());
-        $stmt->execute();
+    public function apagarVaga(vagas $vagas, $idEmpresa){
+        try {
+            // Remova a associação na tabela empresa_vaga
+            $sql = "DELETE FROM empresa_vaga WHERE id_vaga = :idVaga AND id_empresa = :idEmpresa";
+            $stmt = conexao::getConexao()->prepare($sql);
+            $stmt->bindValue(":idVaga", $vagas->getId());
+            $stmt->bindValue(":idEmpresa", $idEmpresa);
+            $stmt->execute();
+    
+            // Agora, se não houver mais associações, excluímos a vaga
+            $sqlExcluirVaga = "DELETE FROM vaga WHERE id = :idVaga AND NOT EXISTS (SELECT 1 FROM empresa_vaga WHERE id_vaga = :idVaga)";
+            $stmtExcluirVaga = conexao::getConexao()->prepare($sqlExcluirVaga);
+            $stmtExcluirVaga->bindValue(":idVaga", $vagas->getId());
+            $stmtExcluirVaga->execute();
+            
+        } catch (PDOException $pdoException) {
+            echo "Erro PDO: " . $pdoException->getMessage();
+            echo "Código de erro: " . $pdoException->getCode();
+        } catch (Exception $e) {
+            echo "Erro geral: " . $e->getMessage();
+        }
     }
-
-    public function atualizarVaga(vagas $vagas){
-        $sql = "UPDATE vaga set titulo = :titulo, descricao = :descricao WHERE id = :id";
-
-        $stmt = conexao::getConexao()->prepare($sql);
-        $stmt->bindValue(":titulo", $vagas->getTitulo());
-        $stmt->bindValue(":descricao", $vagas->getDescricao());
-        $stmt->bindValue(":id", $vagas->getId());
-        $stmt->execute();
+    
+    public function atualizarVaga(vagas $vagas, $idEmpresa) {
+        try {
+            // Atualizar dados da vaga
+            $sql = "UPDATE vaga 
+                    SET titulo = :titulo, descricao = :descricao 
+                    WHERE id = :id 
+                    AND id IN (SELECT id_vaga FROM empresa_vaga WHERE id_empresa = :idEmpresa)";
+    
+            $stmt = conexao::getConexao()->prepare($sql);
+            $stmt->bindValue(":titulo", $vagas->getTitulo());
+            $stmt->bindValue(":descricao", $vagas->getDescricao());
+            $stmt->bindValue(":id", $vagas->getId());
+            $stmt->bindValue(":idEmpresa", $idEmpresa);
+            $stmt->execute();
+    
+            return true;
+        } catch (PDOException $pdoException) {
+            // Adicione mensagens de depuração para identificar o problema
+            echo "Erro PDO: " . $pdoException->getMessage();
+            echo "Código de erro: " . $pdoException->getCode();
+            return false;
+        } catch (Exception $e) {
+            // Adicione mensagens de depuração para identificar o problema
+            echo "Erro geral: " . $e->getMessage();
+            return false;
+        }
     }
+    
 }
