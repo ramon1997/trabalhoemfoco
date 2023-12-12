@@ -1,3 +1,14 @@
+<?php
+include_once "../app/model/candidato.php";
+include_once "../app/dao/candidatodao.php";
+include_once "../app/conexao/conexao.php";
+$candidato = new candidato();
+$candidatodao = new candidatoDAO();
+session_start();
+$id = $_SESSION['idCandidato'];
+$dadosdocandidato = $candidatodao->infoCandidato($id);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -37,11 +48,12 @@
         <img src="../imagens/avatar.png">
     </div>
     <div class="informacoes">
-        <h2>Nome completo</h2>
-        <h3>24 Anos</h3>
-        <h3>Secretaria</h3>
-        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi vel natus excepturi aliquam maxime! Modi animi totam iste eligendi quaerat labore ea consectetur porro, nihil repudiandae sint ex. Deserunt, quisquam?</h3>
-        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium tempore at, ab sunt rerum illum sapiente esse, enim voluptatibus molestias exercitationem iusto commodi minima impedit, aliquam fuga iure tempora voluptas.</h3>
+        <h2><?php echo $dadosdocandidato->getNome(); ?></h2>
+        <h3><?php echo $dadosdocandidato->getEmail(); ?></h3>
+        <h3><?php echo $dadosdocandidato->getCargo(); ?></h3>
+        <h3><?php echo $dadosdocandidato->getXp(); ?></h3>
+        <h3><?php echo $dadosdocandidato->getHabilidades(); ?></h3>
+        <h3><?php echo $dadosdocandidato->getFormacao(); ?></h3>
     </div>
     <a href="../app/controller/candidatocontroller.php?sair">Sair</a>
     <footer>

@@ -4,6 +4,10 @@ class candidato{
     private $nome;
     private $email;
     private $senha;
+    private $xp;
+    private $formacao;
+    private $habilidades;
+    private $cargo;
 
     function getId(){
         return $this->id;
@@ -19,6 +23,22 @@ class candidato{
 
     function getSenha(){
         return $this->senha;
+    }
+
+    function getXp(){
+        return $this->xp;
+    }
+
+    function getFormacao(){
+        return $this->formacao;
+    }
+
+    function getHabilidades(){
+        return $this->habilidades;
+    }
+
+    function getCargo(){
+        return $this->cargo;
     }
 
     function setId($id){
@@ -38,5 +58,21 @@ class candidato{
 
     function setSenha($senha){
         $this->senha = $senha;
+    }
+
+    function setXp($xp){
+        $this->xp = $xp;
+    }
+
+    function setFormacao($formacao){
+        $this->formacao = $formacao;
+    }
+
+    function setHabilidades($habilidades){
+        $this->habilidades = $habilidades;
+    }
+
+    function setCargo($cargo){
+        $this->cargo = $cargo;
     }
 }

@@ -7,7 +7,7 @@ $senhaDigitadadocandidato = $_POST['senha'];
 $emailempresa = $_POST['email'];
 $senhaDigitadadaempresa = $_POST['senha'];
 
-$candidato = conexao::getConexao()->prepare("SELECT senha FROM testecandi WHERE email = :email");
+$candidato = conexao::getConexao()->prepare("SELECT id, senha FROM candidato WHERE email = :email");
 $candidato->bindParam(':email', $emailcandidato);
 $candidato->execute();
 $resultadocandidato = $candidato->fetch();
@@ -20,6 +20,7 @@ $resultadoempresa = $empresa->fetch();
 if ($resultadocandidato && password_verify($senhaDigitadadocandidato, $resultadocandidato['senha'])) {
     session_start();
     $_SESSION['candidato'] = true;
+    $_SESSION['idCandidato'] = $resultadocandidato['id'];
     header("Location: candidato");
     exit();
 }

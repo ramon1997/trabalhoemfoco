@@ -1,3 +1,14 @@
+<?php
+include_once "../app/model/candidato.php";
+include_once "../app/dao/candidatodao.php";
+include_once "../app/conexao/conexao.php";
+$candidato = new candidato();
+$candidatodao = new candidatoDAO();
+session_start();
+$id = $_SESSION['idCandidato'];
+$dadosdocandidato = $candidatodao->infoCandidato($id);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -34,19 +45,21 @@
         <h1>Editar seu perfil</h1>
     </div>
     <div class="formulario">
-        <form action="" method="post">
+        <form action="../app/controller/candidatocontroller.php" method="post">
             <label for="nome">Seu nome completo:</label>
-            <input type="text" name="nome" placeholder="Nome completo">
-            <label for="telefone">Numero de celular:</label>
-            <input type="tel" name="telefone" maxlength="15" onkeyup="handlePhone(event)" placeholder="Seu numero com DDD">
+            <input type="text" name="nome" value="<?php echo $dadosdocandidato->getNome() ?>">
             <label for="email">Seu e-mail:</label>
-            <input type="email" name="email" placeholder="Um e-mail valido">
+            <input type="email" name="email" value="<?php echo $dadosdocandidato->getEmail()?>">
+            <label for="cargo">Cargo:</label>
+            <input type="text" name="cargo" id="cargo" value="<?php echo $dadosdocandidato->getCargo() ?>">
             <label for="xp">Suas experiencias profissionais:</label>
-            <textarea name="xp" cols="30" rows="10" desabled></textarea>
-            <label for="educacao">Sua formação: (Faculdade e cursos)</label>
-            <textarea name="educacao" cols="30" rows="10"></textarea>
+            <textarea name="xp" cols="30" rows="10" desabled><?php echo $dadosdocandidato->getXp()?></textarea>
+            <label for="formacao">Sua formação: (Faculdade e cursos)</label>
+            <textarea name="formacao" cols="30" rows="10"><?php echo $dadosdocandidato->getFormacao() ?></textarea>
             <label for="habilidades">Suas habilidades: </label>
-            <textarea name="habilidades" cols="30" rows="10"></textarea>
+            <textarea name="habilidades" cols="30" rows="10"><?php echo $dadosdocandidato->getHabilidades()?></textarea>
+            <input type="hidden" name="atualizar">
+            <input type="hidden" name="id" value="<?php echo $dadosdocandidato->getId(); ?>">
             <input type="submit" value="Editar" id="botao">
         </form>
     </div>

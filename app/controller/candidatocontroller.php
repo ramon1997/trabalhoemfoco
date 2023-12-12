@@ -29,4 +29,16 @@ if (isset($_POST['cadastrar'])) {
     session_destroy();
     header("Location: ../../index.php");
     exit();
+} elseif (isset($_POST['atualizar'])) {
+    $candidato->setId($d['id']);
+    $candidato->setNome($d['nome']);
+    $candidato->setEmail($d['email']);
+    $candidato->setXp($d['xp']);
+    $candidato->setFormacao($d['formacao']);
+    $candidato->setHabilidades($d['habilidades']);
+    $candidato->setCargo($d['cargo']);
+
+    $candidatodao->atualizar($candidato);
+
+    header("Location: ../../candidato/perfil.php");
 }
