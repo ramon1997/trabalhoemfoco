@@ -5,6 +5,8 @@ include_once "../app/dao/empresadao.php";
 
 $vagas = new vagas;
 $vagasdao = new VagasDAO;
+session_start();
+$id_candidato = $_SESSION['idCandidato'];
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
@@ -63,6 +65,7 @@ if ($dadosDaVaga !== false) {
             <h2>descrição da vaga</h2>
             <p><?php echo $dadosDaVaga->getDescricao(); ?></p>
         </div>
+        <a href="../app/controller/candidatocontroller.php?candidatarse&id_vaga=<?php echo $id?>&id_candidato=<?php echo $id_candidato?>">Se candidatar para essa vaga</a>
     <h2 id="deixe">Vagas Parecidas &curvearrowright;</h2>
     <div class="relacionados">
         <div class="card">

@@ -213,5 +213,27 @@ class VagasDAO
             return false;
         }
     }
+
+    public function candidatosDavaga($idVaga, $idEmpresa) {
+        try {
+            $sql = "SELECT candidato.*, candidato_vaga.id_vaga
+                    FROM candidato
+                    JOIN candidato_vaga ON candidato.id = candidato_vaga.id_candidato
+                    JOIN empresa_vaga ON candidato_vaga.id_vaga = empresa_vaga.id_vaga
+                    WHERE candidato_vaga.id_vaga = :idVaga
+                    AND empresa_vaga.id_empresa = :idEmpresa";
+    
+            $stmt = conexao::getConexao()->prepare($sql);
+            $stmt->bindValue(":idVaga", $idVaga);
+            $stmt->bindValue(":idEmpresa", $idEmpresa);
+            $stmt->execute();
+    
+            $candidatos = $stmt->fetchAll(PDO::FETCH_CLASS, 'candidato');
+            return $candidatos;
+        } catch (Exception $e) {
+            echo "erro ao listar candidatos" . $e;
+        }
+    }
+    
     
 }

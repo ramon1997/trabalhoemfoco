@@ -65,4 +65,16 @@ class candidatoDAO{
             return false;
         }
     }
+
+    public function candidatarse($id_vaga, $id_candidato){
+        try {
+            $sql = "INSERT INTO candidato_vaga (id_candidato, id_vaga) VALUES (:idCandidato, :idVaga)";
+            $stmt = conexao::getConexao()->prepare($sql);
+            $stmt->bindValue(":idVaga", $id_vaga);
+            $stmt->bindValue(":idCandidato", $id_candidato);
+            $stmt->execute();
+        } catch (Exception $e) {
+            echo "erro ao se candidatar".$e;
+        }
+    }
 }

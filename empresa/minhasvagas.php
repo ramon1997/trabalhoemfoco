@@ -111,6 +111,7 @@ $vagasdao = new VagasDAO;
             <p><?php echo $vaga->getDescricao(); ?></p>
             <button><a href="../app/controller/empresacontroller.php?apagarvaga&id=<?php echo $vaga->getId() ?>">Apagar vaga</a></button>
             <button onclick="openModal()">Atualizar</button>
+            <button><a href="candidatos.php?idVaga=<?php echo $vaga->getId() ?>" target="_blank" rel="noopener noreferrer">Candidatos</a></button>
         </div>
     <?php } ?>
     </div>

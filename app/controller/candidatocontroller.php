@@ -41,4 +41,11 @@ if (isset($_POST['cadastrar'])) {
     $candidatodao->atualizar($candidato);
 
     header("Location: ../../candidato/perfil.php");
+} elseif (isset($_GET['candidatarse'])) {
+    $id_vaga = $_GET['id_vaga'];
+    $id_candidato = $_GET['id_candidato'];
+
+    $candidatodao->candidatarse($id_vaga, $id_candidato);
+
+    header("Location: ../../candidato/vagas.php");
 }
