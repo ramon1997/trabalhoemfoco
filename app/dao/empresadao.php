@@ -234,6 +234,22 @@ class VagasDAO
             echo "erro ao listar candidatos" . $e;
         }
     }
+
+    public function buscarVagas($busca){
+        try {
+            $sql = "SELECT * FROM vaga WHERE titulo LIKE :busca";
+    
+            $stmt = conexao::getConexao()->prepare($sql);
+            $stmt->bindParam(":busca", $busca);
+            $stmt->execute();
+    
+            // Retorna os resultados da consulta
+            return $stmt->fetchAll(PDO::FETCH_CLASS, 'Vagas');
+        } catch (Exception $e) {
+            echo "Nenhum resultado".$e->getMessage();
+            return [];  // Retorna um array vazio em caso de erro
+        }
+    }
     
     
 }

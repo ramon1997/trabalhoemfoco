@@ -6,6 +6,8 @@ include_once "../app/dao/empresadao.php";
 $vagas = new vagas;
 $vagasdao = new VagasDAO;
 
+$busca = $_POST['buscarvagas'];
+
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +16,7 @@ $vagasdao = new VagasDAO;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vagas - Trabalho em Foco</title>
+    <title>Buscar - Trabalho em Foco</title>
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/estilo-vagas.css">
@@ -41,18 +43,19 @@ $vagasdao = new VagasDAO;
             </ul>
         </nav>
     </div>
-    <form action="buscarvagas.php" method="post">
-        <input type="search" name="buscarvagas" id="buscarvagas" placeholder="Pesquisar vaga">
-        <input type="submit" value="Buscar">
-    </form>
     <div class="titulo">
-        <h1>Vagas Disponiveis &curvearrowright;</h1>
+        <h1>Resultado da busca &curvearrowright;</h1>
     </div>
-    <?php foreach ($vagasdao->listarVagas() as $vaga) { ?>
+    <?php
+    $resultados = $vagasdao->buscarVagas($busca);
+    if (empty($resultados)) {
+        echo "<h1>Nenhum resultado</h1>";
+    } ?>
+    <?php foreach ($vagasdao->buscarVagas($busca) as $vaga) { ?>
         <div class="vaga">
             <h1><?php echo $vaga->getTitulo(); ?></h1>
             <p><?php echo $vaga->getDescricao(); ?></p>
-            <button><a href="vaga.php?id=<?php echo $vaga->getId()?>" target="_blank" rel="noopener noreferrer">Veja mais</a></button>
+            <button><a href="vaga.php?id=<?php echo $vaga->getId() ?>" target="_blank" rel="noopener noreferrer">Veja mais</a></button>
         </div>
     <?php } ?>
     </div>
